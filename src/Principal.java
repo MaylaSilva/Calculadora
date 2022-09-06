@@ -30,10 +30,14 @@ public class Principal {
                 try {
                     System.out.print("Digite a quantidade de temperaturas a serem convertidas: ");
                     quantidade = input.nextInt();
+                    while (quantidade < 0){
+                        System.out.println("Digite uma quantidade positiva");
+                        quantidade = input.nextInt();
+                    }
                     done = true;
                 } catch (InputMismatchException e) {
                     input.nextLine();
-                    System.err.println("Você não digitou um número.");
+                    System.err.println("Você não digitou um número positivo inteiro.");
                 }
             }
             System.out.println("\n");
